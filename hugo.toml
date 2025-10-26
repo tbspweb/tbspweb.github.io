@@ -1,4 +1,4 @@
-baseURL = 'https://tbspweb.github.io/'
+baseURL = 'https://tbspweb.tbsp.org'
 languageCode = 'en-us'
 title = 'Tahoe Backcountry Ski Patrol'
 theme = 'gohugo'
