@@ -1,14 +1,18 @@
 baseURL = 'https://tbspweb.github.io/'
 languageCode = 'en-us'
 title = 'Tahoe Backcountry Ski Patrol'
-theme = 'PaperMod'
+theme = 'gohugo'
+resourceDir = "../resources"
 
 [params]
 description = "Promotes fun, safe, and responsible winter recreation by providing education, delivering outreach, and rendering assistance to the Tahoe Region winter sports community."
+background_color_class = "bg-white"
+#"bg-mid-gray" #"bg-blue"
+recent_posts_number = 5
 
-[[params.socialIcons]]
-name = "wiki"
-url = "http://wiki.tbsp.org"
+# [[params.socialIcons]]
+# name = "wiki"
+# url = "http://wiki.tbsp.org"
 
 [menu]
 [[menu.main]]
@@ -20,3 +24,9 @@ weight = 1
 name = "Join Us"
 url = "http://wiki.tbsp.org/TBSP_Introduction"
 weight = 2
+
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
