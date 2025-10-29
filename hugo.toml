@@ -3,12 +3,24 @@ languageCode = 'en-us'
 title = 'Tahoe Backcountry Ski Patrol'
 theme = 'gohugo'
 resourceDir = "../resources"
+ignoreFiles = ["README\\.md$", "readme\\.md$"]
+
+buildDrafts = false
+buildFuture = false
+buildExpired = false
+
+[frontmatter]
+date = ["date", "publishDate", "lastmod", ":fileModTime"]
 
 [params]
 description = "Promotes fun, safe, and responsible winter recreation by providing education, delivering outreach, and rendering assistance to the Tahoe Region winter sports community."
 background_color_class = "bg-white"
 #"bg-mid-gray" #"bg-blue"
 recent_posts_number = 5
+
+#featuredTag = "always"
+#featuredCount = 3
+#recentCount = 3
 
 # [[params.socialIcons]]
 # name = "wiki"
@@ -21,9 +33,29 @@ url = "/"
 weight = 1
 
 [[menu.main]]
-name = "Join Us"
-url = "http://wiki.tbsp.org/TBSP_Introduction"
-weight = 2
+  name = "About TBSP"
+  url = "#about"
+  weight = 2
+
+[[menu.main]]
+  name = "What's New"
+  url = "#posts"
+  weight = 3
+
+[[menu.main]]
+  name = "Patroller Login"
+  url = "https://beacon.tbsp.org"
+  weight = 4
+
+[[menu.main]]
+  name = "Contact"
+  url = "patrol@tbsp.org"
+  weight = 6
+
+#[[menu.main]]
+#name = "TBSPedia"
+#url = "http://wiki.tbsp.org/TBSP_Introduction"
+#weight = 5
 
 
 [markup]
