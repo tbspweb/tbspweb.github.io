@@ -2,7 +2,7 @@
 date: 2025-10-26T10:39:31-07:00
 description: "What We Offer"
 #featured_image: "/images/tbsp-square-3.jpg"
-tags: ["scene"]
+tags: ["about"]
 title: "What We Offer"
 ---
 We offer
