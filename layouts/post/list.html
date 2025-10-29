@@ -1,0 +1,15 @@
+{{ define "main" }}
+<article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray">
+  <h1 class="f1">{{ .Title }}</h1>
+</article>
+
+<div class="mw8 center">
+  <section class="ph3 ph5-l pb5">
+    {{ range .Pages }}
+      <div class="mb4 mb5-l">
+        {{ .Render "summary-with-image.html" }}
+      </div>
+    {{ end }}
+  </section>
+</div>
+{{ end }}

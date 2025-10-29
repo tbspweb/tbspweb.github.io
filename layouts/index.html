@@ -1,0 +1,37 @@
+{{ define "main" }}
+<article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray">
+  {{ .Content }}
+</article>
+
+<div class="mw8 center">
+
+  <section class="ph3 ph5-l pb5">
+    <a name="posts"/>
+    <h2 class="f2 fw7 ttu tracked lh-title mt0 mb3 avenir">Recent Posts</h2>
+    {{ $recent := where .Site.RegularPages "Section" "post" }}
+    {{ range first 2 $recent }}
+      <div class="mb4 mb5-l">
+        {{ .Render "summary-with-image" }}
+      </div>
+    {{ end }}
+    
+    <div class="tc mt4">
+      <a href="/posts/" class="f5 no-underline black bg-animate hover-bg-black hover-white inline-flex items-center pa3 ba border-box">
+        <span class="pl1">View All Posts</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="ph3 ph5-l pb5">
+    <a name="about"/>
+    <h2 class="f2 fw7 ttu tracked lh-title mt0 mb3 avenir">Learn About TBSP</h2>
+    {{ $featured := where .Site.RegularPages "Section" "in" (slice "about") }}
+    {{ range first 3 $featured }}
+      <div class="mb4 mb5-l">
+        {{ .Render "summary-with-image" }}
+      </div>
+    {{ end }}
+  </section>
+
+</div>
+{{ end }}
