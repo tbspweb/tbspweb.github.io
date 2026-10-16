@@ -12,7 +12,7 @@
   <article class="flex-l mw8 center ph3 flex-wrap justify-between">
     <header class="mt4 w-100">
       <p class="f6 fw7 ttu tracked mid-gray mv0">{{ .CurrentSection.Title }}</p>
-      <h1 class="f2 f1-l fw7 lh-title near-black mt2 mb2">{{ .Title }}</h1>
+      <h1 class="f3 f2-m f1-l fw7 lh-title near-black mt2 mb2">{{ .Title }}</h1>
       {{ if and (not $isAbout) (not .Date.IsZero) }}
         <time class="f6 mid-gray dib mb3" datetime="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
           {{- .Date | time.Format (compare.Default "January 2, 2006" .Site.Params.date_format) -}}
