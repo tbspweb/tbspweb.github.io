@@ -1,10 +1,12 @@
 ---
 date: 2025-10-26T10:39:31-07:00
 description: "Tahoe Backcountry Alliance Partnership"
-featured_image: "/images/TB_LogoF1-02.png"
+featured_image: "/images/tbsp-cover-1.jpg"
 tags: ["partnership"]
 title: "Partnership with Tahoe Backcountry Alliance"
 ---
+
+<img src="/images/TB_LogoF1-02.png" alt="Tahoe Backcountry Alliance logo" width="240">
 
 TBSP has partnered with the [Tahoe Backcountry Alliance](https://www.tahoebackcountryalliance.org) to advocate for backcountry access and to provide valuable data on backcountry usage patterns.
 

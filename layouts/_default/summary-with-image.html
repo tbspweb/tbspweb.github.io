@@ -1,0 +1,22 @@
+{{/*
+  Card used on the home page and the post list: photo, title, a short
+  plain-text preview, and a "Read more" link. The preview comes from the
+  page's "summary" front matter if set, otherwise the start of the text.
+*/}}
+{{ $featured_image := partials.Include "func/GetFeaturedImage.html" . }}
+<article class="bb b--black-10 pv4">
+  <div class="flex items-start">
+    {{ with $featured_image }}
+      <a href="{{ $.RelPermalink }}" class="db w-30 w-40-ns flex-none pr3 pr4-ns" tabindex="-1" aria-hidden="true">
+        <img src="{{ . }}" class="card-thumb db w-100 br2" alt="" loading="lazy">
+      </a>
+    {{ end }}
+    <div class="flex-auto">
+      <h3 class="f5 f3-ns fw7 lh-title near-black mt0 mb2">
+        <a href="{{ .RelPermalink }}" class="color-inherit link dim">{{ .Title }}</a>
+      </h3>
+      <p class="f6 f5-ns lh-copy mid-gray mt0 mb2 mb3-ns">{{ .Summary | plainify | htmlUnescape | strings.Truncate 220 }}</p>
+      <a href="{{ .RelPermalink }}" class="dib f6 f5-ns fw6 link blue hover-dark-blue pv2" aria-label="Read more about {{ .Title }}">Read more&nbsp;&rarr;</a>
+    </div>
+  </div>
+</article>

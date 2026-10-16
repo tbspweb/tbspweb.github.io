@@ -1,0 +1,17 @@
+{{/*
+  Header for single pages: the menu over a short strip of the page's
+  featured photo. The page title is shown once, in the page body, so it
+  is not repeated here.
+*/}}
+{{ $featured_image := partials.Include "func/GetFeaturedImage.html" . }}
+{{ if $featured_image }}
+  <header class="{{ .Params.featured_image_class | compare.Default "cover bg-center" }}" style="background-image: url('{{ $featured_image }}');">
+    <div class="{{ .Params.cover_dimming_class | compare.Default "bg-black-60" }} pb5 pb6-ns">
+      {{ partials.Include "site-navigation.html" . }}
+    </div>
+  </header>
+{{ else }}
+  <header class="{{ .Site.Params.background_color_class | compare.Default "bg-black" }}">
+    {{ partials.Include "site-navigation.html" . }}
+  </header>
+{{ end }}

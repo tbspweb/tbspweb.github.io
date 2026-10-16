@@ -1,0 +1,26 @@
+/* Site-wide adjustments to the Ananke theme. */
+
+/* The theme pads <main> with 16rem, leaving a large empty band above the
+   footer; 4rem is plenty. */
+main[role="main"] {
+  padding-bottom: 4rem;
+}
+
+/* Crop card photos to squares so wide or tall images line up with the
+   others instead of showing as thin strips. */
+.card-thumb {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+/* Phones: smaller menu buttons so the menu takes less of the screen. */
+@media screen and (max-width: 30em) {
+  nav[role="navigation"] ul {
+    gap: 0.4rem;
+  }
+
+  nav[role="navigation"] ul li a {
+    padding: 0.25rem 0.7rem;
+    font-size: 0.9rem;
+  }
+}

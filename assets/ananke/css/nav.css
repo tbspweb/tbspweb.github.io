@@ -1,0 +1,38 @@
+/*
+ * Main menu: give each item its own outlined button so the entries read as
+ * separate links, and keep them legible over the cover photo.
+ */
+nav[role="navigation"] ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.75rem 0 0;
+  padding: 0;
+}
+
+nav[role="navigation"] ul li {
+  padding: 0; /* replaces the theme's pr3 spacing; gap handles it */
+}
+
+nav[role="navigation"] ul li a {
+  display: block;
+  padding: 0.35rem 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 999px;
+  background-color: rgba(0, 0, 0, 0.35);
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+nav[role="navigation"] ul li a:hover,
+nav[role="navigation"] ul li a:focus-visible {
+  border-color: #fff;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Large screens: menu sits beside the site title, so drop the top margin. */
+@media screen and (min-width: 60em) {
+  nav[role="navigation"] ul {
+    margin-top: 0;
+  }
+}

@@ -65,8 +65,11 @@ this repository. If you don't see it, you don't have access yet.
 
 Posts appear under **Recent Posts** on the home page, newest first.
 
-1. Open this repository on github.com and click the **`content`** folder,
-   then the **`post`** folder.
+Each post is a file ending in `.md` on the repository's main page, listed
+below the folders (for example `tba-trail-counters.md`). You never need to
+open a folder to work on posts.
+
+1. Open this repository's main page on github.com.
 2. Click **Add file** (top right), then **Create new file**.
 3. In the **Name your file** box, type a short name made of lowercase words
    joined by dashes, ending in `.md`. For example:
@@ -75,7 +78,8 @@ Posts appear under **Recent Posts** on the home page, newest first.
    2026-ski-along-dates.md
    ```
 
-   Don't use spaces, capital letters, or symbols such as `&`, `?` or `'`.
+   Type the name straight into the box, without a folder name in front of
+   it. Don't use spaces, capital letters, or symbols such as `&`, `?` or `'`.
    The file name becomes part of the web address, so
    `2026-ski-along-dates.md` is published at `tbsp.org/post/2026-ski-along-dates/`.
 
@@ -86,7 +90,7 @@ Posts appear under **Recent Posts** on the home page, newest first.
    ---
    title: "Ski-Along Dates for the 2026 Season"
    date: 2026-11-01
-   description: "Come patrol with us for a day"
+   summary: "Spend a day on patrol with us this winter. Here are the dates."
    featured_image: "/images/tbsp-square-1.jpg"
    tags: ["news"]
    ---
@@ -107,8 +111,8 @@ Posts appear under **Recent Posts** on the home page, newest first.
    |---|---|
    | `title` | The headline of your post. Keep the quotation marks. |
    | `date` | Today's date as **year-month-day**, for example `2026-11-01`. **A future date hides the post** until that day arrives. |
-   | `description` | One short sentence, shown in the preview on the home page. |
-   | `featured_image` | The picture shown next to the post. Use one of the existing photos below, or [add your own](#3-add-a-photo-to-a-post). |
+   | `summary` | One or two sentences shown as the preview on the home page. If you leave this line out, the preview is the first couple of sentences of the post. |
+   | `featured_image` | A **photo** shown next to the post and across the top of its page. Use one of the existing photos below, or [add your own](#3-add-a-photo-to-a-post). Don't use a logo here; it gets cropped and darkened. |
    | `tags` | One or more labels in quotation marks, separated by commas, for example `["news", "training"]`. |
 
    **Don't delete the two `---` lines or any of the quotation marks.** Most
@@ -170,6 +174,10 @@ commit again.
      The text in square brackets is read aloud to visitors who use screen
      readers, so describe what the photo shows.
 
+For the `featured_image`, pick a photo whose subject is near the middle: it
+is cropped to a square on the home page and to a wide strip at the top of
+the post. To show a logo, put it inside the body of the post instead.
+
 Only upload photos that TBSP has permission to use. Ask people before you post
 a photo where they can be clearly identified.
 
@@ -190,8 +198,8 @@ a photo where they can be clearly identified.
 
 ## 5. Edit or delete a post
 
-- **Edit:** Go to `content` → `post`, click the post's file, then click the
-  pencil icon (✏️) at the top right. Make your changes and click
+- **Edit:** On the repository's main page, click the post's `.md` file,
+  then click the pencil icon (✏️) at the top right. Make your changes and click
   **Commit changes**.
 - **Delete:** Open the file, click the **⋯** menu at the top right, then click
   **Delete file** and **Commit changes**.
@@ -200,7 +208,7 @@ Every change is saved in the history, so you can always undo a mistake. If you
 need to undo something, ask the webmaster.
 
 The **Learn About TBSP** section on the home page works the same way. Its pages
-live in `content/about` instead of `content/post`. Each About page has a
+live in the `content/about` folder. Each About page has a
 `weight:` line, and the home page lists them from the lowest number to the
 highest. To add an About page, give it the next unused number.
 
@@ -230,7 +238,8 @@ on every push to `main`.
 
 ```
 content/_index.md      Home page intro text and banner
-content/post/          Blog posts ("Recent Posts")
+*.md (top level)       Blog posts ("Recent Posts"), mounted as content/post/
+content/post/_index.md Title of the post list ("What's New")
 content/about/         "Learn About TBSP" pages
 layouts/index.html     Home page layout
 layouts/post/list.html "All posts" page layout
@@ -247,5 +256,9 @@ cd tbspweb.github.io
 hugo server        # requires Hugo extended 0.146 or newer
 ```
 
-Then open <http://localhost:1313>. You can also scaffold a new post with
-`hugo new content post/my-post.md`.
+Then open <http://localhost:1313>.
+
+Every `.md` file in the top level of the repository except `README.md` is
+published as a post (see `[module.mounts]` in `hugo.toml`). Don't add other
+Markdown files there, such as notes or a CHANGELOG. Put them in a folder, or
+add them to `excludeFiles`.

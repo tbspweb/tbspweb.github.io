@@ -17,6 +17,7 @@ description = "Promotes fun, safe, and responsible winter recreation by providin
 background_color_class = "bg-white"
 #"bg-mid-gray" #"bg-blue"
 recent_posts_number = 5
+custom_css = ["nav.css", "site.css"]
 
 #featuredTag = "always"
 #featuredCount = 3
@@ -62,3 +63,16 @@ weight = 1
   [markup.goldmark]
     [markup.goldmark.renderer]
       unsafe = true
+
+# Blog posts live as .md files in the top level of the repository, so
+# officers can find them without opening any folders. They are mounted
+# into the "post" section; everything else stays under content/.
+[module]
+  [[module.mounts]]
+    source = "content"
+    target = "content"
+  [[module.mounts]]
+    source = "."
+    target = "content/post"
+    includeFiles = ["/*.md"]
+    excludeFiles = ["/README.md", "/CLAUDE.md"]
