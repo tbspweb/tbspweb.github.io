@@ -1,0 +1,16 @@
+{{/*
+  Header for list pages (all posts, tags): the menu and the list's title
+  over a short strip of the cover photo.
+*/}}
+{{ $featured_image := partials.Include "func/GetFeaturedImage.html" . }}
+<header class="cover bg-center"{{ with $featured_image }} style="background-image: url('{{ . }}');"{{ end }}>
+  <div class="{{ site.Params.cover_dimming_class | compare.Default "bg-black-60" }}">
+    {{ partials.Include "site-navigation.html" . }}
+    <div class="tc-l pt3 pb4 pv5-l ph3 ph4-ns">
+      <h1 class="f2 f1-l fw6 white-90 mv0 lh-title">{{ .Title | compare.Default .Site.Title }}</h1>
+      {{ with .Params.description }}
+        <p class="f5 f4-l white-80 measure-wide-l center lh-copy mt3 mb0">{{ . }}</p>
+      {{ end }}
+    </div>
+  </div>
+</header>
