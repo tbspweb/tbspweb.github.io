@@ -65,8 +65,11 @@ this repository. If you don't see it, you don't have access yet.
 
 Posts appear under **Recent Posts** on the home page, newest first.
 
-1. Open this repository on github.com and click the **`content`** folder,
-   then the **`post`** folder.
+Each post is a file ending in `.md` on the repository's main page, listed
+below the folders (for example `tba-trail-counters.md`). You never need to
+open a folder to work on posts.
+
+1. Open this repository's main page on github.com.
 2. Click **Add file** (top right), then **Create new file**.
 3. In the **Name your file** box, type a short name made of lowercase words
    joined by dashes, ending in `.md`. For example:
@@ -75,7 +78,8 @@ Posts appear under **Recent Posts** on the home page, newest first.
    2026-ski-along-dates.md
    ```
 
-   Don't use spaces, capital letters, or symbols such as `&`, `?` or `'`.
+   Type the name straight into the box, without a folder name in front of
+   it. Don't use spaces, capital letters, or symbols such as `&`, `?` or `'`.
    The file name becomes part of the web address, so
    `2026-ski-along-dates.md` is published at `tbsp.org/post/2026-ski-along-dates/`.
 
@@ -194,8 +198,8 @@ a photo where they can be clearly identified.
 
 ## 5. Edit or delete a post
 
-- **Edit:** Go to `content` → `post`, click the post's file, then click the
-  pencil icon (✏️) at the top right. Make your changes and click
+- **Edit:** On the repository's main page, click the post's `.md` file,
+  then click the pencil icon (✏️) at the top right. Make your changes and click
   **Commit changes**.
 - **Delete:** Open the file, click the **⋯** menu at the top right, then click
   **Delete file** and **Commit changes**.
@@ -204,7 +208,7 @@ Every change is saved in the history, so you can always undo a mistake. If you
 need to undo something, ask the webmaster.
 
 The **Learn About TBSP** section on the home page works the same way. Its pages
-live in `content/about` instead of `content/post`. Each About page has a
+live in the `content/about` folder. Each About page has a
 `weight:` line, and the home page lists them from the lowest number to the
 highest. To add an About page, give it the next unused number.
 
@@ -234,7 +238,8 @@ on every push to `main`.
 
 ```
 content/_index.md      Home page intro text and banner
-content/post/          Blog posts ("Recent Posts")
+*.md (top level)       Blog posts ("Recent Posts"), mounted as content/post/
+content/post/_index.md Title of the post list ("What's New")
 content/about/         "Learn About TBSP" pages
 layouts/index.html     Home page layout
 layouts/post/list.html "All posts" page layout
@@ -251,5 +256,9 @@ cd tbspweb.github.io
 hugo server        # requires Hugo extended 0.146 or newer
 ```
 
-Then open <http://localhost:1313>. You can also scaffold a new post with
-`hugo new content post/my-post.md`.
+Then open <http://localhost:1313>.
+
+Every `.md` file in the top level of the repository except `README.md` is
+published as a post (see `[module.mounts]` in `hugo.toml`). Don't add other
+Markdown files there, such as notes or a CHANGELOG. Put them in a folder, or
+add them to `excludeFiles`.
