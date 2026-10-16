@@ -13,6 +13,16 @@ main[role="main"] {
   object-fit: cover;
 }
 
+/* PNGs are usually logos: show them whole rather than cropping them. */
+.card-thumb[src$=".png"] {
+  object-fit: contain;
+}
+
+/* Post text shown in a card starts level with the card's title. */
+.card-body > :first-child {
+  margin-top: 0;
+}
+
 /* Phones: smaller menu buttons so the menu takes less of the screen. */
 @media screen and (max-width: 30em) {
   nav[role="navigation"] ul {

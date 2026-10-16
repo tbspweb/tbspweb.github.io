@@ -16,8 +16,11 @@ background and no help from a webmaster.**
 - **You make every change in your web browser.** You edit, add and upload
   files on github.com. You don't need to install anything or use a command
   line.
-- **It publishes itself.** When you save a change, GitHub rebuilds the site
-  and puts it live within about two minutes.
+- **It publishes itself.** When your change is approved, GitHub rebuilds the
+  site and puts it live within about two minutes.
+- **Every change gets a second look.** Changes go in as *pull requests*, a
+  proposal that is merged into the live site with one click. Nobody can
+  break the site by accident while editing.
 - **No server to look after.** The site is hosted free on
   [GitHub Pages](https://pages.github.com/). There's no web server, database,
   or software to patch or renew, and nothing to break when an officer's term
@@ -28,10 +31,12 @@ background and no help from a webmaster.**
 
 ### How a change gets to the website
 
-1. An officer edits or adds a file on github.com and clicks **Commit changes**.
-2. GitHub automatically runs a build (you can watch it in the **Actions** tab).
+1. An officer edits or adds a file on github.com and proposes the change as a
+   pull request.
+2. The pull request is merged, by the officer or by a reviewer.
+3. GitHub automatically runs a build (you can watch it in the **Actions** tab).
    A tool called [Hugo](https://gohugo.io/) turns the text files into web pages.
-3. GitHub Pages publishes the new pages. The site is currently at
+4. GitHub Pages publishes the new pages. The site is currently at
    <https://tbspweb.tbsp.org>.
 
 If a build fails, the previous version of the site stays up. A mistake can't
@@ -40,12 +45,13 @@ take the website down.
 ## Contents
 
 1. [Before you start (one time only)](#1-before-you-start-one-time-only)
-2. [Add a new post](#2-add-a-new-post)
-3. [Add a photo to a post](#3-add-a-photo-to-a-post)
-4. [Check that your post went live](#4-check-that-your-post-went-live)
-5. [Edit or delete a post](#5-edit-or-delete-a-post)
-6. [Troubleshooting](#6-troubleshooting)
-7. [For maintainers](#7-for-maintainers)
+2. [Saving a change: pull requests](#2-saving-a-change-pull-requests)
+3. [Add a new post](#3-add-a-new-post)
+4. [Add a photo to a post](#4-add-a-photo-to-a-post)
+5. [Check that your post went live](#5-check-that-your-post-went-live)
+6. [Edit or delete a post](#6-edit-or-delete-a-post)
+7. [Troubleshooting](#7-troubleshooting)
+8. [For maintainers](#8-for-maintainers)
 
 ---
 
@@ -61,7 +67,50 @@ this repository. If you don't see it, you don't have access yet.
 
 ---
 
-## 2. Add a new post
+## 2. Saving a change: pull requests
+
+Nobody can change the live website directly, not even admins. Every change,
+whether it's a new post, an edit, a photo upload or a deletion, is saved as a
+**pull request**: a proposed change that someone then *merges* into the
+website. It only takes a few clicks, and this guide will point you back here
+each time you need it.
+
+**When you've finished editing a file:**
+
+1. Click the green **Commit changes...** button.
+2. In the box that opens:
+   - Under *Commit message*, write a short note about what you changed, for
+     example `Add ski-along dates post`.
+   - **Create a new branch for this commit and start a pull request** is
+     already selected, and GitHub suggests a branch name. Leave both as they
+     are.
+   - Click **Propose changes**.
+3. On the next page, *Open a pull request*, click the green
+   **Create pull request** button.
+4. You're now on your pull request's page. Scroll down to the bottom:
+   - If you see **Merge pull request**, click it, then
+     **Confirm merge**. Your change is on its way to the website.
+   - If you see **Review required** or **Merging is blocked**, another
+     officer has to approve your change first. Send them the link to the page
+     you're on. Once they approve it, come back and click
+     **Merge pull request**, then **Confirm merge**.
+5. After merging, you can click **Delete branch**. This just tidies up and
+   doesn't remove your change.
+
+Your change goes live about two minutes after it's merged. See
+[section 5](#5-check-that-your-post-went-live) to check.
+
+**To fix a mistake before merging,** stay on the pull request page and click
+the **Files changed** tab. Then click **⋯** next to the file and choose
+**Edit file**. Your edit is added to the same pull request.
+
+**To review someone else's change,** open their link and click the
+**Files changed** tab to see what they changed. Then click
+**Review changes** → **Approve** → **Submit review**.
+
+---
+
+## 3. Add a new post
 
 Posts appear under **Recent Posts** on the home page, newest first.
 
@@ -90,7 +139,6 @@ open a folder to work on posts.
    ---
    title: "Ski-Along Dates for the 2026 Season"
    date: 2026-11-01
-   summary: "Spend a day on patrol with us this winter. Here are the dates."
    featured_image: "/images/tbsp-square-1.jpg"
    tags: ["news"]
    ---
@@ -102,6 +150,10 @@ open a folder to work on posts.
 
    - Bullet lists start with a dash and a space
    - Like this
+
+   ## A heading like this starts a new section
+
+   Everything above the first heading appears on the home page.
    ```
 
 5. Replace the example text with your own. The lines between the two `---`
@@ -111,8 +163,7 @@ open a folder to work on posts.
    |---|---|
    | `title` | The headline of your post. Keep the quotation marks. |
    | `date` | Today's date as **year-month-day**, for example `2026-11-01`. **A future date hides the post** until that day arrives. |
-   | `summary` | One or two sentences shown as the preview on the home page. If you leave this line out, the preview is the first couple of sentences of the post. |
-   | `featured_image` | A **photo** shown next to the post and across the top of its page. Use one of the existing photos below, or [add your own](#3-add-a-photo-to-a-post). Don't use a logo here; it gets cropped and darkened. |
+   | `featured_image` | The picture shown next to the post on the home page and across the top of its page. Use one of the existing photos below, or [add your own](#4-add-a-photo-to-a-post). |
    | `tags` | One or more labels in quotation marks, separated by commas, for example `["news", "training"]`. |
 
    **Don't delete the two `---` lines or any of the quotation marks.** Most
@@ -128,14 +179,21 @@ open a folder to work on posts.
 
 6. To check your formatting, click the **Preview** tab above the editing area.
    (The preview shows the settings block as a small table. That's normal.)
-7. Click the green **Commit changes...** button. In the box that opens:
-   - Under *Commit message*, write a short note such as
-     `Add ski-along dates post`.
-   - Leave **Commit directly to the `main` branch** selected.
-   - Click **Commit changes**.
+7. Save and publish it as a pull request. See
+   [Saving a change](#2-saving-a-change-pull-requests).
 
-The website updates itself within about two minutes. See
-[section 4](#4-check-that-your-post-went-live) to check that it worked.
+### What appears on the home page
+
+The home page shows each post's **first section** in full: everything from
+the top of the post down to its first heading (a line starting with `##`).
+Links, lists and bold text all appear just as you wrote them. If the post
+continues after that heading, the home page shows a **Continue reading** link
+that names the next section and takes readers straight to it.
+
+- For a short post, don't use any headings. The whole post appears on the
+  home page.
+- For a long post, put the most important part first, then start the
+  details with a `##` heading.
 
 ### Saving a post without publishing it
 
@@ -147,11 +205,11 @@ draft: true
 ```
 
 When the post is ready, delete that line (or change it to `draft: false`) and
-commit again.
+save it again as a pull request.
 
 ---
 
-## 3. Add a photo to a post
+## 4. Add a photo to a post
 
 1. Shrink your photo first. Aim for about **1200 pixels wide** and under
    **500 KB**. Photos straight from a phone are usually too big and make the
@@ -160,8 +218,10 @@ commit again.
 2. Rename the photo file using lowercase words and dashes, with no spaces,
    for example `castle-peak-sunrise.jpg`.
 3. In this repository, click **`static`**, then **`images`**.
-4. Click **Add file**, then **Upload files**. Drag your photo in, then click
-   **Commit changes**.
+4. Click **Add file**, then **Upload files**. Drag your photo in, then save it
+   as a pull request and merge it. See
+   [Saving a change](#2-saving-a-change-pull-requests). Upload the photo and
+   merge it **before** you add the post that uses it.
 5. Use the photo in your post:
    - As the preview picture, put this in the settings block:
      `featured_image: "/images/castle-peak-sunrise.jpg"`
@@ -174,35 +234,36 @@ commit again.
      The text in square brackets is read aloud to visitors who use screen
      readers, so describe what the photo shows.
 
-For the `featured_image`, pick a photo whose subject is near the middle: it
-is cropped to a square on the home page and to a wide strip at the top of
-the post. To show a logo, put it inside the body of the post instead.
+For the `featured_image`, pick a photo whose subject is near the middle: on
+the home page, `.jpg` photos are cropped to a square. `.png` images, which are
+usually logos, are shown whole.
 
 Only upload photos that TBSP has permission to use. Ask people before you post
 a photo where they can be clearly identified.
 
 ---
 
-## 4. Check that your post went live
+## 5. Check that your post went live
 
 1. Click the **Actions** tab at the top of this repository.
-2. The top row is your change:
+2. The top row is your change. It appears once your pull request is merged.
    - A yellow circle means it is still publishing. Wait a minute.
    - A green check mark means it is live. Visit the website. If you still see
      the old page, refresh it.
-   - A red X means something went wrong. See [Troubleshooting](#6-troubleshooting).
+   - A red X means something went wrong. See [Troubleshooting](#7-troubleshooting).
      The previous version of the website stays up, so nothing is broken for
      visitors.
 
 ---
 
-## 5. Edit or delete a post
+## 6. Edit or delete a post
 
 - **Edit:** On the repository's main page, click the post's `.md` file,
-  then click the pencil icon (✏️) at the top right. Make your changes and click
-  **Commit changes**.
+  then click the pencil icon (✏️) at the top right. Make your changes, then
+  save them as a [pull request](#2-saving-a-change-pull-requests).
 - **Delete:** Open the file, click the **⋯** menu at the top right, then click
-  **Delete file** and **Commit changes**.
+  **Delete file**, and save it as a
+  [pull request](#2-saving-a-change-pull-requests).
 
 Every change is saved in the history, so you can always undo a mistake. If you
 need to undo something, ask the webmaster.
@@ -214,7 +275,7 @@ highest. To add an About page, give it the next unused number.
 
 ---
 
-## 6. Troubleshooting
+## 7. Troubleshooting
 
 | Problem | Likely cause and fix |
 |---|---|
@@ -222,19 +283,23 @@ highest. To add an About page, give it the next unused number.
 | The Actions tab shows a red X. | Usually the settings block is broken. Check that both `---` lines are present, that every quotation mark has a partner, and that the date looks like `2026-11-01`. Click the red X to see the error message. |
 | The picture is missing or broken. | Check that the file name in your post exactly matches the uploaded file, including `.jpg` versus `.JPG`, and that the path starts with `/images/`. |
 | The settings appear as text at the top of my post. | The first line of the file must be `---`, with nothing above it, not even a blank line. |
+| My change isn't on the website. | Check that your pull request was **merged**, not just created. Open the **Pull requests** tab. If it's still listed there, open it and merge it (see [section 2](#2-saving-a-change-pull-requests)). |
+| "Commit directly to the main branch" is greyed out. | That's expected. All changes go through a pull request. Choose **Create a new branch** and continue with [section 2](#2-saving-a-change-pull-requests). |
+| The **Merge pull request** button is grey. | Your change needs another officer's approval first. Send them the link to your pull request. |
 | I don't see the "Add file" button or the pencil. | You aren't signed in, or you haven't been added to the organization yet. See [section 1](#1-before-you-start-one-time-only). |
 
 If you're stuck, email the webmaster with a link to your file.
 
 ---
 
-## 7. For maintainers
+## 8. For maintainers
 
 The site is built with [Hugo](https://gohugo.io/) and the
 [Ananke](https://github.com/theNewDynamic/gohugo-theme-ananke) theme, which is
 included as a git submodule in `themes/gohugo`. GitHub Actions
 (`.github/workflows/hugo.yml`) builds the site and deploys it to GitHub Pages
-on every push to `main`.
+on every push to `main`. The `main` branch is protected, so all changes,
+including maintainers' changes, land through pull requests.
 
 ```
 content/_index.md      Home page intro text and banner
