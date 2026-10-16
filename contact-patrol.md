@@ -4,7 +4,6 @@ description: "Contact the Patrol"
 featured_image: "/images/tbsp-square-3.jpg"
 tags: ["scene"]
 title: "Contact the Patrol"
-summary: "Want more information about the patrol? Meet the officers, email the Patrol Director, or schedule a ski-along."
 ---
 Want more information about the patrol?
 
