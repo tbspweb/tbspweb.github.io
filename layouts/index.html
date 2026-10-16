@@ -1,5 +1,23 @@
+{{/*
+  The banner artwork already carries the patrol's name, so the home page
+  header shows it over the dimmed cover photo instead of repeating the
+  site title as text. The heading stays in the page for screen readers.
+*/}}
+{{ define "header" }}
+{{ $cover := partials.Include "func/GetFeaturedImage.html" . }}
+<header class="cover bg-center"{{ with $cover }} style="background-image: url('{{ . }}');"{{ end }}>
+  <div class="bg-black-60 pb3 pb5-ns">
+    {{ partials.Include "site-navigation.html" . }}
+    <h1 class="clip">{{ .Site.Title }}</h1>
+    <div class="ph3 ph4-ns pt2">
+      <img src="{{ "images/tbsp-banner-1060px.jpg" | relURL }}" alt="Tahoe Backcountry Ski Patrol: a patroller skiing powder below a snowy peak" class="db center w-100 mw8 br2 shadow-4">
+    </div>
+  </div>
+</header>
+{{ end }}
+
 {{ define "main" }}
-<article class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray">
+<article class="cf ph3 ph5-l pv4 f5 f4-ns tc-l center measure-wide lh-copy mid-gray">
   {{ .Content }}
 </article>
 
