@@ -1,9 +1,12 @@
 {{/*
-  Card used on the home page and the post list: photo, title, a short
-  plain-text preview, and a "Read more" link. The preview comes from the
-  page's "summary" front matter if set, otherwise the start of the text.
+  Card used on the home page and the post list: photo, title, and the
+  post's first section rendered in full, i.e. everything before its first
+  heading. If the post continues past that heading, a link naming the
+  next section follows straight on from the text.
 */}}
 {{ $featured_image := partials.Include "func/GetFeaturedImage.html" . }}
+{{ $firstSection := replaceRE `(?s)<h[1-6][\s>].*$` "" .Content }}
+{{ $nextHeading := index (findRESubmatch `(?s)<h[1-6](?:\s+id="([^"]*)")?[^>]*>(.*?)</h[1-6]>` .Content 1) 0 }}
 <article class="bb b--black-10 pv4">
   <div class="flex items-start">
     {{ with $featured_image }}
@@ -15,8 +18,12 @@
       <h3 class="f5 f3-ns fw7 lh-title near-black mt0 mb2">
         <a href="{{ .RelPermalink }}" class="color-inherit link dim">{{ .Title }}</a>
       </h3>
-      <p class="f6 f5-ns lh-copy mid-gray mt0 mb2 mb3-ns">{{ .Summary | plainify | htmlUnescape | strings.Truncate 220 }}</p>
-      <a href="{{ .RelPermalink }}" class="dib f6 f5-ns fw6 link blue hover-dark-blue pv2" aria-label="Read more about {{ .Title }}">Read more&nbsp;&rarr;</a>
+      <div class="f6 f5-ns lh-copy mid-gray nested-copy-line-height nested-links card-body">
+        {{ $firstSection | safeHTML }}
+        {{ with $nextHeading }}
+          <p><a href="{{ $.RelPermalink }}{{ with index . 1 }}#{{ . }}{{ end }}" class="fw6">Continue reading: {{ index . 2 | plainify }}&nbsp;&rarr;</a></p>
+        {{ end }}
+      </div>
     </div>
   </div>
 </article>
