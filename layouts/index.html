@@ -24,10 +24,10 @@
 <div class="mw8 center">
 
   <section id="posts" class="ph3 ph5-l pb5">
-    <h2 class="f2 fw7 ttu tracked lh-title mt0 mb3 avenir">Recent Posts</h2>
+    <h2 class="f4 f3-ns fw7 ttu tracked lh-title near-black mt0 mb2">Recent Posts</h2>
     {{ $recent := where .Site.RegularPages "Section" "post" }}
     {{ range first 2 $recent }}
-      <div class="mb4 mb5-l">
+      <div>
         {{ .Render "summary-with-image" }}
       </div>
     {{ end }}
@@ -40,10 +40,10 @@
   </section>
 
   <section id="about" class="ph3 ph5-l pb5">
-    <h2 class="f2 fw7 ttu tracked lh-title mt0 mb3 avenir">Learn About TBSP</h2>
+    <h2 class="f4 f3-ns fw7 ttu tracked lh-title near-black mt0 mb2">Learn About TBSP</h2>
     {{ $featured := where .Site.RegularPages "Section" "in" (slice "about") }}
     {{ range $featured.ByWeight }}
-      <div class="mb4 mb5-l">
+      <div>
         {{ .Render "summary-with-image" }}
       </div>
     {{ end }}
