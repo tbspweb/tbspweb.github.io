@@ -86,7 +86,7 @@ Posts appear under **Recent Posts** on the home page, newest first.
    ---
    title: "Ski-Along Dates for the 2026 Season"
    date: 2026-11-01
-   description: "Come patrol with us for a day"
+   summary: "Spend a day on patrol with us this winter. Here are the dates."
    featured_image: "/images/tbsp-square-1.jpg"
    tags: ["news"]
    ---
@@ -107,8 +107,8 @@ Posts appear under **Recent Posts** on the home page, newest first.
    |---|---|
    | `title` | The headline of your post. Keep the quotation marks. |
    | `date` | Today's date as **year-month-day**, for example `2026-11-01`. **A future date hides the post** until that day arrives. |
-   | `description` | One short sentence, shown in the preview on the home page. |
-   | `featured_image` | The picture shown next to the post. Use one of the existing photos below, or [add your own](#3-add-a-photo-to-a-post). |
+   | `summary` | One or two sentences shown as the preview on the home page. If you leave this line out, the preview is the first couple of sentences of the post. |
+   | `featured_image` | A **photo** shown next to the post and across the top of its page. Use one of the existing photos below, or [add your own](#3-add-a-photo-to-a-post). Don't use a logo here; it gets cropped and darkened. |
    | `tags` | One or more labels in quotation marks, separated by commas, for example `["news", "training"]`. |
 
    **Don't delete the two `---` lines or any of the quotation marks.** Most
@@ -169,6 +169,10 @@ commit again.
 
      The text in square brackets is read aloud to visitors who use screen
      readers, so describe what the photo shows.
+
+For the `featured_image`, pick a photo whose subject is near the middle: it
+is cropped to a square on the home page and to a wide strip at the top of
+the post. To show a logo, put it inside the body of the post instead.
 
 Only upload photos that TBSP has permission to use. Ask people before you post
 a photo where they can be clearly identified.
