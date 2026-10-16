@@ -6,7 +6,7 @@ tags: ["partnership"]
 title: "Partnership with Tahoe Backcountry Alliance"
 ---
 
-TBSP has partnered with the [Tahoe Backcountry Alliance](http://www.tahoebackcountryalliance.org) to advocate for backcountry access and to provide valuable data on backcountry usage patterns.
+TBSP has partnered with the [Tahoe Backcountry Alliance](https://www.tahoebackcountryalliance.org) to advocate for backcountry access and to provide valuable data on backcountry usage patterns.
 
 As part of this partnership, we've installed [Trafx trail counters](https://www.trafx.net) at popular backcountry destinations throughout the Tahoe region. These counters help us understand:
 
@@ -19,4 +19,4 @@ As part of this partnership, we've installed [Trafx trail counters](https://www.
 
 The Tahoe Backcountry Alliance works to preserve and enhance access to backcountry skiing, snowboarding, and winter recreation in the Tahoe region. Through advocacy, education, and partnership with organizations like TBSP, they ensure that future generations can continue to enjoy the freedom and adventure of the backcountry.
 
-Learn more about their work and how you can support backcountry access at [tahoebackcountryalliance.org](http://www.tahoebackcountryalliance.org).
+Learn more about their work and how you can support backcountry access at [tahoebackcountryalliance.org](https://www.tahoebackcountryalliance.org).

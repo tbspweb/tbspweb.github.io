@@ -33,6 +33,4 @@ cascade:
 
 Tahoe Backcountry Ski Patrol promotes fun, safe, and responsible winter recreation by providing education, delivering outreach, and rendering assistance to the Tahoe Region winter sports community.
 
-</div>
-
 

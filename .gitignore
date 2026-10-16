@@ -1,0 +1,7 @@
+# Hugo build output
+/public/
+/resources/
+.hugo_build.lock
+
+# TBSPedia lives in its own repository (github.com/tbspweb/tbspedia)
+/tbspedia/
