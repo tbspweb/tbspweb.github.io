@@ -29,11 +29,6 @@ custom_css = ["nav.css", "site.css"]
 
 [menu]
 [[menu.main]]
-name = "Home"
-url = "/"
-weight = 1
-
-[[menu.main]]
   name = "About TBSP"
   url = "/#about"
   weight = 2
