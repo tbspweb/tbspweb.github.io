@@ -32,7 +32,7 @@ background and no help from a webmaster.**
 2. GitHub automatically runs a build (you can watch it in the **Actions** tab).
    A tool called [Hugo](https://gohugo.io/) turns the text files into web pages.
 3. GitHub Pages publishes the new pages. The site is currently at
-   <https://tbspweb.tbsp.org>.
+   <https://tbsp.org>.
 
 If a build fails, the previous version of the site stays up. A mistake can't
 take the website down.
