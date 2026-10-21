@@ -4,6 +4,11 @@ This repository holds the public website for the Tahoe Backcountry Ski Patrol
 (TBSP). The site tells the public who we are, where we patrol, and how to join,
 and it carries patrol news.
 
+**New to this?** You don't need to know anything technical. If you just want
+to post something, skip ahead to [Add a new post](#2-add-a-new-post) and
+follow the pictures. Every step happens in your web browser, and you can't
+break the website: any mistake can be undone.
+
 ## Why the site works this way
 
 The site is built so that **any TBSP officer can update it, with no technical
@@ -53,11 +58,27 @@ take the website down.
 
 1. Create a free account at <https://github.com/signup> if you don't have one.
 2. Send your GitHub username to the webmaster or the Patrol Director and ask
-   them to add you to the **tbspweb** organization.
+   them to add you to this repository.
 3. Accept the email invitation from GitHub.
 
 Once you've accepted, an **Add file** button appears when you open folders in
 this repository. If you don't see it, you don't have access yet.
+
+### Adding a new officer
+
+You can only do this if you look after the site and can see the
+**Settings** tab.
+
+1. Click the **Settings** tab at the top of this repository.
+2. In the list on the left, click **Collaborators**.
+3. Click **Add people**, type the new officer's GitHub username or email
+   address, pick them from the list, and click the green button to add them.
+   If GitHub asks for a role, choose **Write**.
+
+<img src="docs/images/add-collaborator.png" width="600" alt="The Collaborators page in the repository settings, with the Settings tab, the Collaborators link and the Add people button numbered 1 to 3">
+
+GitHub emails them an invitation. They can edit the site as soon as they
+accept it. When an officer leaves, remove them from the same page.
 
 ---
 
@@ -69,8 +90,13 @@ Each post is a file ending in `.md` on the repository's main page, listed
 below the folders (for example `tba-trail-counters.md`). You never need to
 open a folder to work on posts.
 
+<img src="docs/images/repo-main-page.png" width="600" alt="The list of files on the repository main page, with two post files outlined: contact-patrol.md and tba-trail-counters.md">
+
 1. Open this repository's main page on github.com.
 2. Click **Add file** (top right), then **Create new file**.
+
+   <img src="docs/images/add-file-menu.png" width="600" alt="The Add file menu open, showing Create new file and Upload files">
+
 3. In the **Name your file** box, type a short name made of lowercase words
    joined by dashes, ending in `.md`. For example:
 
@@ -84,7 +110,9 @@ open a folder to work on posts.
    `2026-ski-along-dates.md` is published at `tbsp.org/post/2026-ski-along-dates/`.
 
 4. Copy everything in the grey box below and paste it into the large editing
-   area:
+   area. (Or start from an existing post: open it, click the **Copy raw
+   file** button, the two-squares icon next to **Raw**, and paste that
+   instead.)
 
    ```
    ---
@@ -106,6 +134,8 @@ open a folder to work on posts.
 
    Everything above the first heading appears on the home page.
    ```
+
+   <img src="docs/images/new-file-editor.png" width="600" alt="The GitHub editor, labelled with the steps: the file name box at the top left (step 3), the editing area where you paste your post (step 4), the Preview tab (step 6) and the Commit changes button at the top right (step 7)">
 
 5. Replace the example text with your own. The lines between the two `---`
    markers are settings for the post:
@@ -135,6 +165,8 @@ open a folder to work on posts.
      `Add ski-along dates post`.
    - Leave **Commit directly to the `main` branch** selected.
    - Click **Commit changes**.
+
+   <img src="docs/images/commit-dialog.png" width="400" alt="The Commit changes box, with a commit message filled in and Commit directly to the main branch selected">
 
    The website updates itself within about two minutes. See
    [section 4](#4-check-that-your-post-went-live) to check that it worked.
@@ -174,10 +206,16 @@ commit again.
    Photos → Resize.)
 2. Rename the photo file using lowercase words and dashes, with no spaces,
    for example `castle-peak-sunrise.jpg`.
-3. In this repository, click **`static`**, then **`images`**.
-4. Click **Add file**, then **Upload files**. Drag your photo in, then click
-   **Commit changes**. Upload the photo **before** you add the post that
-   uses it.
+3. On this repository's main page, click the **`static/images`** folder.
+
+   <img src="docs/images/images-folder.png" width="600" alt="The list of folders on the repository main page, with the static/images folder outlined">
+
+4. Click **Add file** (top right), then **Upload files**. Drag your photo
+   in, then click **Commit changes**. Upload the photo **before** you add the
+   post that uses it.
+
+   <img src="docs/images/folder-add-file.png" width="600" alt="The static/images folder open on GitHub, with the Add file button outlined at the top right">
+
 5. Use the photo in your post:
    - As the preview picture, put this in the settings block:
      `featured_image: "/images/castle-peak-sunrise.jpg"`
@@ -202,6 +240,9 @@ a photo where they can be clearly identified.
 ## 4. Check that your post went live
 
 1. Click the **Actions** tab at the top of this repository.
+
+   <img src="docs/images/actions-tab.png" width="600" alt="The row of tabs at the top of the repository, with the Actions tab outlined">
+
 2. The top row is your change:
    - A yellow circle means it is still publishing. Wait a minute.
    - A green check mark means it is live. Visit the website. If you still see
@@ -209,6 +250,8 @@ a photo where they can be clearly identified.
    - A red X means something went wrong. See [Troubleshooting](#6-troubleshooting).
      The previous version of the website stays up, so nothing is broken for
      visitors.
+
+   <img src="docs/images/actions-runs.png" width="600" alt="The list of website builds on the Actions tab, with the newest one outlined and showing a green check mark">
 
 ---
 
@@ -219,6 +262,8 @@ a photo where they can be clearly identified.
   **Commit changes**.
 - **Delete:** Open the file, click the **⋯** menu at the top right, then click
   **Delete file** and **Commit changes**.
+
+<img src="docs/images/edit-and-delete.png" width="600" alt="A post file opened on GitHub, with the pencil icon and the ⋯ menu outlined at the top right">
 
 Every change is saved in the history, so you can always undo a mistake. If you
 need to undo something, ask the webmaster.
@@ -238,7 +283,7 @@ highest. To add an About page, give it the next unused number.
 | The Actions tab shows a red X. | Usually the settings block is broken. Check that both `---` lines are present, that every quotation mark has a partner, and that the date looks like `2026-11-01`. Click the red X to see the error message. |
 | The picture is missing or broken. | Check that the file name in your post exactly matches the uploaded file, including `.jpg` versus `.JPG`, and that the path starts with `/images/`. |
 | The settings appear as text at the top of my post. | The first line of the file must be `---`, with nothing above it, not even a blank line. |
-| I don't see the "Add file" button or the pencil. | You aren't signed in, or you haven't been added to the organization yet. See [section 1](#1-before-you-start-one-time-only). |
+| I don't see the "Add file" button or the pencil. | You aren't signed in, or you haven't been added to this repository yet. See [section 1](#1-before-you-start-one-time-only). |
 
 If you're stuck, email the webmaster with a link to your file.
 
@@ -261,6 +306,7 @@ layouts/index.html     Home page layout
 layouts/post/list.html "All posts" page layout
 layouts/partials/      Footer override
 static/images/         Images, served at /images/...
+docs/images/           Screenshots used in this README (not published)
 hugo.toml              Site title, menu, and settings
 ```
 
