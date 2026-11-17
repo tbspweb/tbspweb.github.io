@@ -34,3 +34,66 @@ main[role="main"] {
     font-size: 0.9rem;
   }
 }
+
+/* Social media icons in the footer, centred above the copyright line. */
+.footer-socials .ananke-socials {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.footer-socials .ananke-socials a {
+  margin: 0;
+  padding: 0;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-socials .ananke-socials a:hover,
+.footer-socials .ananke-socials a:focus-visible {
+  color: #fff;
+}
+
+.footer-socials .ananke-socials a .icon,
+.footer-socials .ananke-socials a .icon svg {
+  display: block;
+  width: 1.75rem;
+  height: 1.75rem;
+}
+
+/* Social media icons under the home page banner: round buttons in the
+   same style as the menu items. */
+.hero-socials,
+.hero-socials .ananke-socials {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.hero-socials .ananke-socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin: 0;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.35);
+  color: #fff;
+}
+
+.hero-socials .ananke-socials a:hover,
+.hero-socials .ananke-socials a:focus-visible {
+  border-color: #fff;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+.hero-socials .ananke-socials a .icon,
+.hero-socials .ananke-socials a .icon svg {
+  display: block;
+  width: 1.4rem;
+  height: 1.4rem;
+}

@@ -6,11 +6,15 @@
 {{ define "header" }}
 {{ $cover := partials.Include "func/GetFeaturedImage.html" . }}
 <header class="cover bg-center"{{ with $cover }} style="background-image: url('{{ . }}');"{{ end }}>
-  <div class="bg-black-60 pb3 pb5-ns">
+  <div class="bg-black-60 pb3 pb4-ns">
     {{ partials.Include "site-navigation.html" . }}
     <h1 class="clip">{{ .Site.Title }}</h1>
     <div class="ph3 ph4-ns pt2">
       <img src="{{ "images/tbsp-banner-1060px.jpg" | relURL }}" alt="Tahoe Backcountry Ski Patrol: a patroller skiing powder below a snowy peak" class="db center w-100 mw8 br2 shadow-4">
+    </div>
+    <div class="hero-socials ph3 pt3 pt4-ns">
+      <span class="f5 f4-ns white-90">Follow us</span>
+      {{ partials.IncludeCached "social/follow.html" . }}
     </div>
   </div>
 </header>

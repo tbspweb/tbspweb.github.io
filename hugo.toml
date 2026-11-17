@@ -22,9 +22,16 @@ custom_css = ["nav.css", "site.css"]
 #featuredCount = 3
 #recentCount = 3
 
-# [[params.socialIcons]]
-# name = "wiki"
-# url = "http://wiki.tbsp.org"
+# Social media icons shown under the home page banner and in the footer. To add another
+# network, add its name to the list and a block with its username below.
+[params.ananke.social.follow]
+networks = ["facebook", "instagram"]
+
+[params.ananke.social.facebook]
+username = "tbskipatrol"
+
+[params.ananke.social.instagram]
+username = "tahoebackcountryskipatrol"
 
 [menu]
 [[menu.main]]
