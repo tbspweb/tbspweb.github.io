@@ -29,6 +29,9 @@
 
   <!-- Original Footer Content -->
   <div class="tc">
+    <div class="footer-socials pb3">
+      {{ partials.IncludeCached "social/follow.html" . }}
+    </div>
     <a class="f4 fw4 hover-white no-underline white-70 pv2 ph3" href="/">
       &copy; {{ now.Year }} Tahoe Backcountry Ski Patrol
     </a>
